@@ -1,0 +1,77 @@
+{
+  "name": "tokentrack",
+  "version": "1.0.0",
+  "description": "See how much your AI coding tools actually cost you. Dashboard for Claude Code & OpenAI Codex token usage.",
+  "author": "Elisha Bajemon",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elishab60/tokentrack.git"
+  },
+  "homepage": "https://github.com/elishab60/tokentrack#readme",
+  "bugs": {
+    "url": "https://github.com/elishab60/tokentrack/issues"
+  },
+  "keywords": [
+    "claude",
+    "claude-code",
+    "codex",
+    "openai",
+    "anthropic",
+    "token-usage",
+    "ai-tools",
+    "developer-tools",
+    "dashboard",
+    "cost-tracking",
+    "llm",
+    "ccusage"
+  ],
+  "type": "module",
+  "bin": {
+    "tokentrack": "./dist/cli.js"
+  },
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "tsx src/cli.ts",
+    "build": "tsup && node -e \"const fs=require('fs');const f='dist/cli.js';let c=fs.readFileSync(f,'utf8').replace(/^#!.*\\n/,'');fs.writeFileSync(f,'#!/usr/bin/env node\\n'+c);\" && chmod +x dist/cli.js && vite build",
+    "start": "node dist/cli.js",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.0",
+    "chalk": "^5.3.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "date-fns": "^4.1.0",
+    "glob": "^11.0.0",
+    "hono": "^4.6.0",
+    "open": "^10.1.0",
+    "ora": "^8.1.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@tanstack/react-table": "^8.20.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "recharts": "^2.13.0",
+    "tailwindcss": "^3.4.0",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0",
+    "zustand": "^5.0.0"
+  }
+}
