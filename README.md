@@ -15,7 +15,7 @@ npx tokentrack
 
 ---
 
-![TokenTrack Dashboard](./docs/screenshot.png)
+![TokenTrack Dashboard](./docs/screenshot_readme.png)
 
 ---
 
